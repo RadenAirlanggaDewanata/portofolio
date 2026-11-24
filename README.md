@@ -207,6 +207,43 @@ Semua data sertifikasi terpusat di objek **`certificationsSection`** dalam [`src
 
 - **Foto Profil (`public/images/profile.png`):** Portrait vertikal (`3:4` atau `4:5`, min `800×1000 px`), direkomendasikan `.png` transparan (*cutout*) atau latar gelap.
 
+### E. Cara Mengganti Logo / Icon pada Title Browser (`index.html` & `public/images/`)
+
+Ikon kecil di sebelah judul tab browser (*favicon*) diatur di [`index.html`](index.html) baris 5 yang saat ini mengarah ke [`public/favicon.svg`](public/favicon.svg).
+
+1. **Simpan File Gambar Logo ke `public/images/`:**
+   - Siapkan logo berukuran persegi (`1:1`, rekomendasi `64×64 px` atau `512×512 px`) dengan latar transparan/gelap, lalu simpan ke `public/images/` (misalnya `public/images/logo.png` atau `public/images/logo.svg`).
+2. **Ubah Syntax `href` pada [`index.html`](index.html) (Baris 5):**
+   - Sesuaikan atribut `type` dan `href` ke path gambar Anda di `/images/...` (tambahkan `?v=2` di akhir URL untuk memperbarui cache browser):
+     ```html
+     <!-- Sebelumnya (ikon bawaan Vite): -->
+     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+     <!-- Sesudah diganti dengan gambar PNG di public/images/: -->
+     <link rel="icon" type="image/png" href="/images/logo.png?v=2" />
+
+     <!-- (Opsional) Ikon shortcut saat disimpan ke Home Screen HP: -->
+     <link rel="apple-touch-icon" href="/images/logo.png?v=2" />
+     ```
+   - **Panduan atribut `type` sesuai ekstensi file:**
+     - `.png` → `type="image/png"`
+     - `.svg` → `type="image/svg+xml"`
+     - `.ico` → `type="image/x-icon"`
+     - `.webp` → `type="image/webp"`
+   - *(Untuk mengubah **teks title** di sebelah ikon tersebut, ubah `meta.pageTitle` di [`src/data/portfolioData.js`](src/data/portfolioData.js)).*
+3. **Verifikasi Lokal & Push ke Website Live:**
+   ```bash
+   # 1. Uji tampilan & build lokal
+   pnpm dev
+   pnpm lint
+   pnpm build
+
+   # 2. Kirim ke GitHub agar Vercel otomatis menayangkan logo baru
+   git add .
+   git commit -m "chore: update title favicon logo"
+   git push origin main
+   ```
+
 ---
 
 ## 4. Cara Mengubah Nomor Telepon, Template Chat & Hit API WhatsApp
@@ -335,37 +372,49 @@ git push -u origin template/nama-anda
 
 ---
 
-## 7. Cara Update Tampilan & Tambah Proyek Setelah Website Sudah Online (Hosting)
- Setelah website dipublikasikan, Anda tetap bisa menambah proyek baru, memperbarui CV, mengubah teks, maupun merombak tampilan kapan saja. Caranya menyesuaikan metode hosting yang Anda pakai:
+## 7. Cara Update Tampilan, Icon & Konten Setelah Website Sudah Online (Hosting)
+
+Setelah website dipublikasikan (misalnya di **Vercel** + custom domain Rumahweb), Anda tetap bisa menambah proyek baru, memperbarui CV/sertifikasi, mengganti icon di `index.html`, maupun merombak tampilan kapan saja. Caranya menyesuaikan metode hosting yang Anda pakai:
 
 ### Opsi A — Hosting Terhubung GitHub (*Auto-Deploy*: Vercel, Netlify, Cloudflare Pages)
 
-Ini cara paling praktis karena website live otomatis ter-update setiap kali Anda melakukan `git push`:
+Ini cara paling praktis karena website live otomatis ter-update setiap kali Anda menjalankan `git push`:
 
-1. **Ubah konten atau tampilan di komputer lokal** (misal menambah proyek di `src/data/portfolioData.js` + gambar mockup di `public/images/`, atau mengubah komponen di `src/components/`).
-2. **Uji dulu di lokal sebelum di-push:**
+1. **Lakukan perubahan di komputer lokal** (misal mengedit [`src/data/portfolioData.js`](src/data/portfolioData.js), menambah gambar di `public/images/`, mengubah komponen di `src/components/`, atau mengganti icon title di [`index.html`](index.html)).
+2. **Jalankan urutan perintah `bash` berikut di terminal proyek** untuk mengecek lokal, mem-build, lalu mengirim pembaruan ke GitHub:
    ```bash
-   pnpm dev    # Cek visual di browser lokal (EN/ID & Night/Light)
-   pnpm lint   # Pastikan 0 error
-   pnpm build  # Pastikan build produksi sukses
-   ```
-3. **Commit & Push ke branch live GitHub** (misal `main` atau branch aktif Anda):
-   ```bash
+   # 1. (Opsional) Jalankan server lokal untuk cek visual di browser
+   pnpm dev
+
+   # 2. Pastikan kode bersih (0 error lint) dan build produksi berhasil
+   pnpm lint && pnpm build
+
+   # 3. Cek perubahan file, commit, lalu push ke branch main GitHub
+   git status
    git add .
-   git commit -m "feat: update UI and add new project"
+   git commit -m "feat: update portfolio content and assets"
    git push origin main
    ```
-4. Platform hosting otomatis mendeteksi *push* terbaru, membangun ulang folder `dist/`, dan menayangkan versi terbaru website Anda dalam beberapa puluh detik.
+   > **Catatan Windows PowerShell:** Jika menjalankan perintah gabungan di PowerShell 5.1 yang belum mendukung `&&`, pisahkan tiap perintah baris per baris atau gunakan `cmd /c "pnpm lint && pnpm build"`.
+3. **Vercel otomatis menayangkan versi baru:** Setelah `git push` selesai, Vercel langsung mendeteksi commit terbaru, membangun ulang folder `dist/`, dan menayangkan perubahannya ke domain live Anda dalam ±30–60 detik tanpa perlu setting ulang domain atau environment.
 
 ### Opsi B — Hosting Upload Manual / CLI (cPanel, Shared Hosting, Wrangler CLI)
 
-1. Lakukan edit di lokal, lalu jalankan `pnpm lint` dan `pnpm build`.
+1. Lakukan edit di lokal, lalu jalankan perintah `bash` berikut:
+   ```bash
+   pnpm lint && pnpm build
+   ```
 2. Seluruh file siap tayang dihasilkan di folder **`dist/`** (bukan `src/`).
-3. Unggah ulang isi folder **`dist/`** ke direktori web server (`public_html/`) atau deploy ulang lewat CLI masing-masing layanan (`npx wrangler deploy`, `npx vercel --prod`, dll).
+3. Unggah ulang isi folder **`dist/`** ke direktori web server (`public_html/`) atau deploy ulang lewat CLI masing-masing layanan:
+   ```bash
+   npx vercel --prod
+   # atau untuk Cloudflare Workers/Pages:
+   npx wrangler deploy
+   ```
 
 > **Tips Penting Saat Update Live:**
-> - Pastikan file gambar baru di `public/images/` ikut masuk saat `git add .` agar tidak muncul placeholder kosong di website live.
-> - Jika Anda mengganti file gambar dengan nama yang sama persis (misal menimpa `profile.png`) namun belum berubah di browser karena *cache*, tekan **Hard Refresh (`Ctrl + Shift + R` / `Cmd + Shift + R`)** atau gunakan nama file baru lalu perbarui path-nya di `src/data/portfolioData.js`.
+> - Pastikan file gambar baru di `public/images/` ikut ter-commit saat `git add .` (cek lewat `git status`) agar tidak muncul placeholder kosong di website live.
+> - Jika mengganti favicon di [`index.html`](index.html) atau menimpa file gambar dengan nama yang sama persis (`profile.png`, `logo.png`), tambahkan versi query `?v=2` pada path di `index.html` lalu tekan **Hard Refresh (`Ctrl + Shift + R` / `Cmd + Shift + R`)** atau buka di jendela **Incognito** untuk melewati cache browser.
 
 ---
 

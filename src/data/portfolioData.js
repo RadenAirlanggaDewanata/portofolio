@@ -55,7 +55,7 @@ const RAW_PORTFOLIO_DATA = {
         label: { en: 'YEARS EXPERIENCE', id: 'TAHUN PENGALAMAN' },
       },
       {
-        value: '6+',
+        value: '3+',
         label: { en: 'PROJECTS COMPLETED', id: 'PROYEK SELESAI' },
       },
     ],
