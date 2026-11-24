@@ -372,7 +372,7 @@ Ini cara paling praktis karena website live otomatis ter-update setiap kali Anda
 ## 8. Hak Cipta & Atribusi Penulis (`Copyright`)
 
 Seluruh rancangan antarmuka, arsitektur komponen React, sistem dwibahasa terpadu, generator CV PDF, dan dokumentasi proyek ini dibuat, dikembangkan, serta dicatat oleh:
-
+  
 - **Pengembang & Penulis Dokumentasi:** **R Airlangga Dewanata**
 - **Hak Cipta:** **© 2026 R Airlangga Dewanata. All Rights Reserved.**
 
