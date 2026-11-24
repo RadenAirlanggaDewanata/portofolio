@@ -1,0 +1,213 @@
+@import "tailwindcss";
+
+@custom-variant light (&:where([data-theme="light"], [data-theme="light"] *));
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+
+  --color-obsidian: #07090e;
+  --color-surface: #0d1117;
+  --color-border-subtle: #1e293b;
+  --color-royal: #2563eb;
+  --color-sky-electric: #38bdf8;
+}
+
+@layer base {
+  html {
+    background-color: #07090e;
+    color: #f1f5f9;
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+  }
+
+  html[data-theme="light"] {
+    background-color: #f8fafc;
+    color: #0f172a;
+  }
+
+  body {
+    margin: 0;
+    background-color: #07090e;
+    overflow-x: clip;
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
+
+  html[data-theme="light"] body {
+    background-color: #f8fafc;
+  }
+}
+
+.font-hero-display {
+  font-family: "Bebas Neue", "Plus Jakarta Sans", system-ui, sans-serif;
+}
+
+.hero-grad-start {
+  stop-color: #38bdf8;
+  stop-opacity: 1;
+}
+.hero-grad-mid {
+  stop-color: #2563eb;
+  stop-opacity: 0.78;
+}
+.hero-grad-end {
+  stop-color: #1d4ed8;
+  stop-opacity: 0;
+}
+
+html[data-theme="light"] .hero-grad-start {
+  stop-color: #0284c7;
+  stop-opacity: 0.95;
+}
+html[data-theme="light"] .hero-grad-mid {
+  stop-color: #2563eb;
+  stop-opacity: 0.65;
+}
+html[data-theme="light"] .hero-grad-end {
+  stop-color: #1e40af;
+  stop-opacity: 0;
+}
+
+/* Editorial gradient text utilities (strictly blue palette — zero red) */
+.text-gradient-blue {
+  background: linear-gradient(90deg, #1d4ed8 0%, #2563eb 45%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+html[data-theme="light"] .text-gradient-blue {
+  background: linear-gradient(90deg, #1e3a8a 0%, #2563eb 52%, #0284c7 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-gradient-blue-hero {
+  background: linear-gradient(
+    180deg,
+    #38bdf8 0%,
+    #2563eb 55%,
+    #1d4ed8 88%,
+    rgba(29, 78, 216, 0.68) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+html[data-theme="light"] .text-gradient-blue-hero {
+  background: linear-gradient(
+    180deg,
+    #0284c7 0%,
+    #2563eb 52%,
+    #1e40af 88%,
+    rgba(30, 58, 138, 0.72) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Subtle hexagonal mesh pattern overlay for editorial depth */
+.bg-hex-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='98' viewBox='0 0 56 98'%3E%3Cg fill='none' stroke='%232563EB' stroke-opacity='0.07' stroke-width='1'%3E%3Cpath d='M28 0 L56 16.33 L56 49 L28 65.33 L0 49 L0 16.33 Z'/%3E%3Cpath d='M28 65.33 L56 81.66 L56 98 M0 98 L0 81.66 L28 65.33'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 56px 98px;
+}
+
+html[data-theme="light"] .bg-hex-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='98' viewBox='0 0 56 98'%3E%3Cg fill='none' stroke='%232563EB' stroke-opacity='0.09' stroke-width='1'%3E%3Cpath d='M28 0 L56 16.33 L56 49 L28 65.33 L0 49 L0 16.33 Z'/%3E%3Cpath d='M28 65.33 L56 81.66 L56 98 M0 98 L0 81.66 L28 65.33'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #07090e;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2563eb;
+}
+
+html[data-theme="light"] ::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+html[data-theme="light"] ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+}
+html[data-theme="light"] ::-webkit-scrollbar-thumb:hover {
+  background: #2563eb;
+}
+
+/* ATS-Friendly A4 Print Rules for CV Preview Modal */
+@page {
+  size: A4;
+  margin: 12mm;
+}
+
+@media print {
+  html,
+  body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    height: auto !important;
+    overflow: visible !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  body.cv-printing-open #root {
+    display: none !important;
+  }
+
+  body * {
+    visibility: hidden !important;
+  }
+
+  .cv-modal-backdrop,
+  .cv-modal-scroll {
+    position: static !important;
+    inset: auto !important;
+    overflow: visible !important;
+    height: auto !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+  }
+
+  .cv-no-print {
+    display: none !important;
+  }
+
+  #cv-printable-area,
+  #cv-printable-area * {
+    visibility: visible !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  #cv-printable-area {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    transform: none !important;
+    background: #ffffff !important;
+  }
+
+  .cv-print-avoid-break {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
