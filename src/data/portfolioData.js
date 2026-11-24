@@ -452,8 +452,8 @@ const RAW_PORTFOLIO_DATA = {
       },
     ],
     professionalSummary: {
-      en: 'Software Engineering (RPL) graduate and Information Systems undergraduate targeting Junior Frontend Developer or UI/UX-focused Full-Stack Developer roles. Built responsive web interfaces, operational dashboards, and Figma design systems using React, Next.js, Vue.js, and Tailwind CSS across corporate website redesigns, freelance client projects, and internal HR applications. Experienced in Helpdesk and Application Support, monitoring application operations, checking API responses, and investigating data issues using DBeaver.',
-      id: 'Lulusan Rekayasa Perangkat Lunak (RPL) dan mahasiswa S1 Sistem Informasi yang membidik posisi Junior Frontend Developer atau Full-Stack Developer (fokus Frontend & UI/UX). Mengembangkan antarmuka web responsif, dashboard operasional, dan design system Figma menggunakan React, Next.js, Vue.js, serta Tailwind CSS pada redesain website perusahaan, proyek freelance, dan aplikasi HR internal. Berpengalaman di Helpdesk dan Application Support untuk memantau operasional aplikasi, memeriksa respons API, serta menelusuri kendala data menggunakan DBeaver.',
+      en: 'Software Engineering (RPL) graduate and Information Systems undergraduate targeting Junior Frontend Developer or UI/UX-focused Full-Stack Developer roles. Built responsive web interfaces, operational dashboards, and Figma design systems using React, Next.js, Vue.js, Tailwind CSS, and Supabase across corporate website redesigns, client projects, and internal HR systems. Experienced in Helpdesk and Application Support, monitoring application operations, checking API responses, and investigating data issues in DBeaver.',
+      id: 'Lulusan Rekayasa Perangkat Lunak (RPL) dan mahasiswa S1 Sistem Informasi yang membidik peran Junior Frontend Developer atau Full-Stack Developer (fokus Frontend & UI/UX). Mengembangkan antarmuka web responsif, dashboard operasional, dan design system Figma menggunakan React, Next.js, Vue.js, Tailwind CSS, serta Supabase untuk redesain website perusahaan, proyek klien, dan sistem HR internal. Berpengalaman di Helpdesk dan Application Support dalam memantau operasional aplikasi, memeriksa respons API, serta menelusuri kendala data menggunakan DBeaver.',
     },
     education: [
       {
@@ -480,14 +480,14 @@ const RAW_PORTFOLIO_DATA = {
         period: '',
         highlights: {
           en: [
-            'Developed the front-end interface for an internal company HR management dashboard using React, Vue.js, and Django.',
+            'Developed the frontend interface for an internal company HR management dashboard using React, Vue.js, and Django.',
             'Built structured employee profile views covering personal information, educational background, certifications, and project assignments.',
-            'Created responsive UI components through an AI-assisted development workflow.',
+            'Delivered responsive UI components using an AI-assisted development workflow.',
           ],
           id: [
-            'Mengembangkan antarmuka front-end untuk dashboard manajemen HR internal perusahaan menggunakan React, Vue.js, dan Django.',
-            'Membangun tampilan profil karyawan terstruktur yang mencakup informasi personal, latar belakang pendidikan, sertifikasi, dan penugasan proyek.',
-            'Membuat komponen UI responsif dengan memanfaatkan alur kerja pengembangan berbantuan AI.',
+            'Mengembangkan antarmuka frontend untuk dashboard manajemen HR internal perusahaan menggunakan React, Vue.js, dan Django.',
+            'Membangun tampilan profil karyawan terstruktur mencakup informasi personal, latar belakang pendidikan, sertifikasi, dan penugasan proyek.',
+            'Menghasilkan komponen UI responsif melalui alur kerja pengembangan berbantuan AI.',
           ],
         },
       },
@@ -497,13 +497,13 @@ const RAW_PORTFOLIO_DATA = {
         period: '',
         highlights: {
           en: [
-            'Designed and developed a web-based operational management dashboard for an individual student client using React.js, Next.js, Tailwind CSS, and Supabase.',
-            'Built centralized data management and operational monitoring features to support MBG program activities.',
+            'Designed and developed a web-based operational management dashboard using React.js, Next.js, Tailwind CSS, and Supabase.',
+            'Built centralized data management and operational monitoring modules to support MBG program activities.',
             'Implemented structured information visualization across the dashboard interface.',
           ],
           id: [
-            'Merancang dan mengembangkan dashboard manajemen operasional berbasis web untuk klien individu (proyek mahasiswa) menggunakan React.js, Next.js, Tailwind CSS, dan Supabase.',
-            'Membangun fitur pengelolaan data terpusat dan pemantauan operasional guna mendukung aktivitas program MBG.',
+            'Merancang dan mengembangkan dashboard manajemen operasional berbasis web menggunakan React.js, Next.js, Tailwind CSS, dan Supabase.',
+            'Membangun modul pengelolaan data terpusat dan pemantauan operasional guna mendukung aktivitas program MBG.',
             'Mengimplementasikan visualisasi informasi yang terstruktur pada antarmuka dashboard.',
           ],
         },
@@ -514,14 +514,14 @@ const RAW_PORTFOLIO_DATA = {
         period: '',
         highlights: {
           en: [
-            'Monitored application operations in a Helpdesk and Application Support role.',
-            'Investigated data issues using DBeaver and checked API responses.',
-            'Coordinated with backend teams to resolve system-related problems.',
+            'Monitored application operations within the Helpdesk and Application Support function.',
+            'Investigated data issues using DBeaver and inspected API responses.',
+            'Coordinated with backend teams to diagnose and resolve system-related problems.',
           ],
           id: [
-            'Memantau operasional aplikasi dalam peran Helpdesk dan Application Support.',
-            'Menelusuri kendala data menggunakan DBeaver dan memeriksa respons API.',
-            'Berkoordinasi dengan tim backend untuk menyelesaikan masalah terkait sistem.',
+            'Memantau operasional aplikasi pada bagian Helpdesk dan Application Support.',
+            'Menelusuri kendala data menggunakan DBeaver serta memeriksa respons API.',
+            'Berkoordinasi dengan tim backend untuk menindaklanjuti dan menyelesaikan masalah terkait sistem.',
           ],
         },
       },
@@ -531,13 +531,13 @@ const RAW_PORTFOLIO_DATA = {
         period: '',
         highlights: {
           en: [
-            'Conducted UX research and analysis to address outdated layouts, unclear navigation, and inconsistent user experiences on the company profile website.',
-            'Created user flows, wireframes, UI designs, and a consistent design system in Figma.',
-            'Developed responsive frontend interfaces for the redesigned corporate website (hexagon.co.id) using Vue.js.',
+            'Conducted UX research and analysis to resolve outdated layouts, unclear navigation, and inconsistent user experiences.',
+            'Designed user flows, wireframes, UI layouts, and a consistent Figma design system.',
+            'Developed responsive frontend interfaces for the redesigned company profile website (hexagon.co.id) using Vue.js.',
           ],
           id: [
-            'Melakukan riset dan analisis UX untuk memperbaiki tata letak lama, navigasi yang kurang jelas, dan pengalaman pengguna yang tidak konsisten pada website company profile.',
-            'Menyusun user flow, wireframe, desain UI, dan design system yang konsisten di Figma.',
+            'Melakukan riset dan analisis UX untuk memperbaiki tata letak lama, navigasi yang kurang jelas, dan pengalaman pengguna yang tidak konsisten.',
+            'Merancang user flow, wireframe, antarmuka UI, serta design system yang konsisten di Figma.',
             'Mengembangkan antarmuka frontend yang responsif untuk website profil perusahaan (hexagon.co.id) menggunakan Vue.js.',
           ],
         },
@@ -547,21 +547,30 @@ const RAW_PORTFOLIO_DATA = {
       {
         id: 'cv-p1',
         title: 'MBG Operational Management Dashboard',
-        meta: 'Private Client | 2026',
+        meta: {
+          en: 'Private Client | 2026',
+          id: 'Klien Privat | 2026',
+        },
         techStack: 'React.js, Next.js, Tailwind CSS, Supabase',
         link: 'https://sistem-mbg.rdanidewanata.workers.dev/dashboard',
       },
       {
         id: 'cv-p2',
-        title: 'Company Profile Website Redesign — PT Hexagon Karyatama Indonesia',
-        meta: 'Corporate | 2025',
+        title: 'PT Hexagon Karyatama Indonesia — Corporate Website Redesign',
+        meta: {
+          en: 'Corporate Website | 2025',
+          id: 'Website Perusahaan | 2025',
+        },
         techStack: 'Figma, Vue.js',
         link: 'https://hexagon.co.id/',
       },
       {
         id: 'cv-p3',
-        title: 'Internal HR Management Dashboard — Amerta Teknologi Media',
-        meta: 'Internal Company App | 2026',
+        title: 'Amerta Teknologi Media — Internal HR Management Dashboard',
+        meta: {
+          en: 'Internal Web App | 2026',
+          id: 'Aplikasi Web Internal | 2026',
+        },
         techStack: 'React, Vue.js, Django',
         link: '',
       },
@@ -577,7 +586,7 @@ const RAW_PORTFOLIO_DATA = {
           en: 'BEM Faculty of Computer Science · Soegijapranata Catholic University',
           id: 'BEM Fakultas Ilmu Komputer · Universitas Katolik Soegijapranata',
         },
-        issueDate: 'Apr 2026',
+        issueDate: 'Feb — Apr 2026',
         role: 'UI/UX Designer & Frontend Developer',
         result: {
           en: 'Participant',
@@ -586,24 +595,45 @@ const RAW_PORTFOLIO_DATA = {
         credentialUrl: '',
       },
     ],
-    // Kategori ringkas tanpa duplikasi antar seksi Skills dan Tools & Technologies
+    // Struktur keahlian (disiplin) dan teknologi (tools) bebas tumpang tindih
     skillGroups: [
+      {
+        category: 'Full-Stack',
+        items: [
+          'Full-Stack Development',
+          'Frontend Development',
+          'Web Application Development',
+          'Responsive Web Design',
+        ],
+      },
+      {
+        category: 'Backend & Integration',
+        items: [
+          'Backend Development',
+          'Database Management',
+          'API Integration',
+        ],
+      },
       {
         category: 'UI/UX',
         items: [
-          'Figma',
           'UX Research',
+          'User Flow Design',
           'Wireframing',
-          'Prototyping',
+          'Interactive Prototyping',
           'Design Systems',
         ],
       },
       {
-        category: 'Additional',
+        category: 'Operations & Workflow',
         items: [
           'Application Support',
-          'API Integration',
+          'System Monitoring',
+          'Debugging & Troubleshooting',
+          'Application Testing',
+          'Version Control',
           'Technical Documentation',
+          'Deployment & Hosting',
         ],
       },
     ],
@@ -634,7 +664,7 @@ const RAW_PORTFOLIO_DATA = {
       },
       {
         category: 'Tools',
-        items: ['Git', 'GitHub', 'Postman', 'DBeaver'],
+        items: ['Figma', 'Git', 'GitHub', 'Postman', 'DBeaver'],
       },
     ],
   },
